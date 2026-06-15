@@ -43,7 +43,12 @@ app.use(express.json());
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "*", // allow all origins in dev
+    origin: [
+      "https://ridexo.vercel.app",
+      "http://localhost:3000",
+      "http://localhost:3001",
+    ],
+    methods: ["GET", "POST"]
   },
 });
 
