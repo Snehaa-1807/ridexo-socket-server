@@ -47,6 +47,14 @@ const io = new Server(server, {
   },
 });
 
+// ADD THIS BLOCK
+app.get("/", (req, res) => {
+  res.json({
+    status: "success",
+    message: "RideXO Socket Server Running"
+  });
+});
+
 app.post("/emit", async (req, res) => {
   const { event, userId, data } = req.body;
 
